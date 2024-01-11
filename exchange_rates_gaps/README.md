@@ -58,13 +58,14 @@ dtype: object
 
 ```
 
+<br>
+
 # Task
 
-The orders data only contains the currency in which it was paid, but not the actual currency value.<br>
-Your task is to add the correct 'currency_to_sek' (from the 'riksbanken_exchange_rates' data) to the 'orders_data.'<br>
+#### The orders data only contains the currency in which it was paid, but not the actual currency value.
+#### Your task is to add the correct 'currency_to_sek' (from the 'riksbanken_exchange_rates' data) to the 'orders_data.'
 
-Unfortunately, the data in 'riksbanken_exchange_rates' lacks information on non-banking days.<br>
-We want to use the currency from the last (previous) day.<br>
+#### Unfortunately, the data in 'riksbanken_exchange_rates' lacks information on non-banking days. In the event that there is missing data for a particular date, we want to use the currency from the last (previous) day.
 
 ## Example :
 

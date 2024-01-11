@@ -1,18 +1,18 @@
 
 # Info / Data
 
-You have the following 2 .csv files
+### You have the following 2 .csv files
 
 ## <strong> riksbanken_exchange_rates.csv </strong>
 ### HEAD
 ```
 
    series_id  group_id  currency_to_sek        date currency             currency_description             source
-0     SEKETT       130           1.0000  2024-01-10      SEK  Used for inverted exchange rate  Sveriges Riksbank
-1  SEKDKKPMI       130           1.5013  2024-01-10      DKK                     Danish krone  Sveriges Riksbank
+0  SEKGBPPMI       130          13.0163  2024-01-10      GBP                   pound sterling  Sveriges Riksbank
+1     SEKETT       130           1.0000  2024-01-10      SEK  Used for inverted exchange rate  Sveriges Riksbank
 2  SEKEURPMI       130          11.1970  2024-01-10      EUR                    Euroland euro  Sveriges Riksbank
-3  SEKGBPPMI       130          13.0163  2024-01-10      GBP                   pound sterling  Sveriges Riksbank
-4  SEKNOKPMI       130           0.9916  2024-01-10      NOK                  Norwegian krone  Sveriges Riksbank
+3  SEKDKKPMI       130           1.5013  2024-01-10      DKK                     Danish krone  Sveriges Riksbank
+4  SEKUSDPMI       130          10.2293  2024-01-10      USD                        US dollar  Sveriges Riksbank
 
 ```
 
@@ -26,7 +26,7 @@ date                     object
 currency                 object
 currency_description     object
 source                   object
-
+dtype: object
 
 ```
 
@@ -36,24 +36,25 @@ source                   object
 ### HEAD
 ```
 
-    site_name site_country currency         paid_datetime  order_id  order_total
-0  stickerapp           dk      DKK  2023-08-10T04:48:56Z    100000       207.02
-1  stickerapp           us      USD  2023-11-12T15:08:40Z    100001       960.25
-2  stickerapp           dk      DKK  2023-07-10T17:48:36Z    100002       337.24
-3  stickerapp           de      EUR  2023-01-12T01:19:35Z    100003        42.55
-4  stickerapp           se      SEK  2023-07-22T02:36:59Z    100004       490.71
+   order_id   paid_date  order_total   site_name site_country currency
+0    100000  2023-08-10       207.02  stickerapp           dk      DKK
+1    100001  2023-11-12       960.25  stickerapp           us      USD
+2    100002  2023-07-10       337.24  stickerapp           dk      DKK
+3    100003  2023-01-12        42.55  stickerapp           de      EUR
+4    100004  2023-07-22       490.71  stickerapp           se      SEK
 
 ```
 
 ### DTYPES
 ```
 
-site_name         object
-site_country      object
-currency          object
-paid_datetime     object
-order_id           int64
-order_total      float64
+order_id          int64
+paid_date        object
+order_total     float64
+site_name        object
+site_country     object
+currency         object
+dtype: object
 
 ```
 
@@ -67,8 +68,8 @@ We want to use the currency from the last (previous) day.<br>
 
 ## Example :
 
-Given an order that was paid in 'USD' and the paid_date was '2024-01-07'<br>
-We would want the currency_to_sek to come from '2024-01-05'<br>
+#### Given an order that was paid in 'USD' and the paid_date was '2024-01-07'<br>
+#### We would want the currency_to_sek to come from '2024-01-05'<br>
 
 ```
 
@@ -83,27 +84,13 @@ We would want the currency_to_sek to come from '2024-01-05'<br>
 
 # Expected result
 
-## Using the example above
-### <strong> This is only an example, the actual result should contain all of the orders </strong>
-
-### DTYPES
-
-```
-site_name         object
-site_country      object
-currency          object
-currency_to_sek   float64
-paid_datetime     object
-order_id           int64
-order_total      float64
-
-```
+### <strong> This is only an example based on the example above, the actual result should contain all of the orders </strong>
 
 ### HEAD 
 
 ```
 
-site_name  site_country currency currency_to_sek         paid_datetime  order_id  order_total
-stickerapp           us      USD         10.2875  2024-01-07T02:36:59Z    100004       490.71
+order_id  paid_date  order_total   site_name site_country currency  currency_to_sek
+  100000 2024-01-07       207.02  stickerapp           us      USD          10.2875
 
 ```

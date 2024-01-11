@@ -59,16 +59,16 @@ order_total      float64
 
 # Task
 
-The orders data only contains the currency in which it was paid, but not the actual currency value. 
-Your task is to add the correct 'currency_to_sek' (from the 'riksbanken_exchange_rates' data) to the 'orders_data.'
+The orders data only contains the currency in which it was paid, but not the actual currency value.<br>
+Your task is to add the correct 'currency_to_sek' (from the 'riksbanken_exchange_rates' data) to the 'orders_data.'<br>
 
-Unfortunately, the data in 'riksbanken_exchange_rates' lacks information on non-banking days. 
-We want to use the currency from the last (previous) day.
+Unfortunately, the data in 'riksbanken_exchange_rates' lacks information on non-banking days.<br>
+We want to use the currency from the last (previous) day.<br>
 
 ## Example :
 
-Given an order that was paid in 'USD' and the paid_date was '2024-01-07'
-We would want the currency_to_sek to come from '2024-01-05'
+Given an order that was paid in 'USD' and the paid_date was '2024-01-07'<br>
+We would want the currency_to_sek to come from '2024-01-05'<br>
 
 ```
 

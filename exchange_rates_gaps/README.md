@@ -69,8 +69,7 @@ dtype: object
 
 ## Example :
 
-#### Given an order that was paid in 'USD' and the paid_date was '2024-01-07'<br>
-#### We would want the currency_to_sek to come from '2024-01-05'<br>
+#### Given an order that was paid in 'USD' and the paid date was '2024-01-07', we would want the currency_to_sek to come from '2024-01-05'.
 
 ```
 
@@ -85,7 +84,7 @@ dtype: object
 
 # Expected result
 
-### <strong> This is only an example based on the example above, the actual result should contain all of the orders </strong>
+### <strong> This is only an example based on the example above. The actual result should contain all of the orders. </strong>
 
 ### HEAD 
 
@@ -95,3 +94,9 @@ order_id  paid_date  order_total   site_name site_country currency  currency_to_
   100000 2024-01-07       207.02  stickerapp           us      USD          10.2875
 
 ```
+
+
+
+
+# Illustration ( Exchange rates with fixed gaps )
+![alt text](./example.jpg)
